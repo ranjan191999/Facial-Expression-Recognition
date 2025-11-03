@@ -1,27 +1,37 @@
-# Core ML + API stack (works cleanly on Windows)
+# ====================================================
+# 🧠 Core ML + API Stack
+# ====================================================
 fastapi
 uvicorn[standard]
 python-multipart
 pydantic
 
-# Deep learning
+# ====================================================
+# 🔥 Deep Learning
+# ====================================================
 torch
 torchvision
 torchaudio
 
-# Data processing
+# ====================================================
+# 📊 Data Processing & Visualization
+# ====================================================
 numpy
 pandas
 scikit-learn
 matplotlib
 Pillow
 
-# NLP & embeddings
+# ====================================================
+# 💬 NLP, Embeddings & Retrieval (Stage 2)
+# ====================================================
 sentence-transformers
 transformers
 langchain
 faiss-cpu
 
-# Extra tools
+# ====================================================
+# ⚡ Optional Extras
+# ====================================================
 accelerate
 streamlit
