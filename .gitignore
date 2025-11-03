@@ -1,1 +1,10 @@
-
+__pycache__/
+.venv/
+.env
+data/
+*.pt
+stage1/artifacts/
+*.log
+*.npy
+*.csv
+.DS_Store
