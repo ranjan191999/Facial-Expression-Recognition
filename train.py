@@ -24,21 +24,21 @@ def train():
 
     if len(train_dl) == 0 or len(val_dl) == 0:
 
-        print("❌ Dataset empty or path incorrect.")
+        print(" Dataset empty or path incorrect.")
 
         print("Expected: ./data/train/<classes> and ./data/test/<classes>")
         return
 
-    print(f"✅ Found classes: {classes}")
+    print(f" Found classes: {classes}")
 
 
 
 
-    print(f"🖼️ Training batches: {len(train_dl)} | Validation batches: {len(val_dl)}")
+    print(f" Training batches: {len(train_dl)} | Validation batches: {len(val_dl)}")
 
     # Device setup
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"🔥 Using device: {device}")
+    print(f" Using device: {device}")
 
 
 
@@ -47,7 +47,7 @@ def train():
     model = resnet18_finetune(num_classes=len(classes)).to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=LR)
-    scaler = GradScaler()   # ⚡ mixed precision scaler
+    scaler = GradScaler()   
     best_acc = 0.0
 
     print("\n Starting Training...\n")
@@ -91,12 +91,12 @@ def train():
                 labels_all.extend(yb.cpu().numpy())
 
         val_acc = correct / total if total > 0 else 0
-        print(f"\n📊 Epoch {epoch}/{EPOCHS} | TrainLoss: {train_loss:.4f} | ValAcc: {val_acc:.4f}\n")
+        print(f"\n Epoch {epoch}/{EPOCHS} | TrainLoss: {train_loss:.4f} | ValAcc: {val_acc:.4f}\n")
 
         if val_acc > best_acc:
             best_acc = val_acc
             torch.save(model.state_dict(), os.path.join(OUT_DIR, "best_model.pt"))
-            print(f"💾 Model saved (ValAcc improved to {best_acc:.4f})")
+            print(f" Model saved (ValAcc improved to {best_acc:.4f})")
 
     # ---------- SAVE REPORT ----------
     report = classification_report(labels_all, preds_all, target_names=classes, output_dict=True)
