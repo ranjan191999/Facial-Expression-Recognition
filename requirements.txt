@@ -1,5 +1,5 @@
 # ====================================================
-# 🧠 Core ML + API Stack
+#  Core ML + API Stack
 # ====================================================
 fastapi
 uvicorn[standard]
@@ -7,14 +7,14 @@ python-multipart
 pydantic
 
 # ====================================================
-# 🔥 Deep Learning
+#  Deep Learning
 # ====================================================
 torch
 torchvision
 torchaudio
 
 # ====================================================
-# 📊 Data Processing & Visualization
+#  Data Processing & Visualization
 # ====================================================
 numpy
 pandas
@@ -23,7 +23,7 @@ matplotlib
 Pillow
 
 # ====================================================
-# 💬 NLP, Embeddings & Retrieval (Stage 2)
+#  NLP, Embeddings & Retrieval (Stage 2)
 # ====================================================
 sentence-transformers
 transformers
@@ -31,7 +31,7 @@ langchain
 faiss-cpu
 
 # ====================================================
-# ⚡ Optional Extras
+#  Optional Extras
 # ====================================================
 accelerate
 streamlit
